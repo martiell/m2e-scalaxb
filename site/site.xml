@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+   <description name="m2e-scalaxb - Scalaxb support for M2Eclipse">
+      m2e-scalaxb - Scalaxb support for M2Eclipse"
+   </description>
+
+   <feature
+       id="org.scalaxb.m2e.feature"
+       version="0.0.0"
+       url="features/org.scalaxb.m2e.feature_0.0.0.jar">
+     <category name="m2e"/>
+   </feature>
+
+   <category-def name="m2e" label="Scalaxb support for M2Eclipse"/>
+
+</site>

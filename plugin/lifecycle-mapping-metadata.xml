@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lifecycleMappingMetadata>
+
+  <pluginExecutions>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.scalaxb</groupId>
+        <artifactId>scalaxb-maven-plugin</artifactId>
+        <goals>
+          <goal>generate</goal>
+        </goals>
+        <versionRange>[0.6.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <configurator>
+          <id>org.scalaxb.m2e</id>
+        </configurator>
+      </action>
+    </pluginExecution>
+  </pluginExecutions>
+
+</lifecycleMappingMetadata>

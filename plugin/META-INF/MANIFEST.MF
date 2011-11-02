@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Maven Integration for Scalaxb
+Bundle-SymbolicName: org.scalaxb.m2e;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: 
+ org.apache.maven.plugin,
+ org.codehaus.plexus.util,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.m2e.core,
+ org.eclipse.m2e.core.embedder,
+ org.eclipse.m2e.core.lifecyclemapping.model,
+ org.eclipse.m2e.core.project,
+ org.eclipse.m2e.core.project.configurator,
+ org.eclipse.m2e.jdt,
+ org.osgi.framework,
+ org.sonatype.plexus.build.incremental
+Bundle-Vendor: Martin Ellis
+Export-Package: org.scalaxb.m2e
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.scalaxb.m2e.Activator

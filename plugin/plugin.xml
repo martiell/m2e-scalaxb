@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+  <extension point="org.eclipse.m2e.core.lifecycleMappingMetadataSource"/>
+
+  <extension point="org.eclipse.m2e.core.projectConfigurators">
+    <configurator
+        class="org.scalaxb.m2e.ScalaxbProjectConfigurator"
+        id="org.scalaxb.m2e"
+        name="scalaxb"/>
+  </extension>
+
+</plugin>
