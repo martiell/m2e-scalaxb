@@ -22,19 +22,23 @@ public class ScalaxbBuildParticipant extends MojoExecutionBuildParticipant {
     @Override
     public Set<IProject> build(int kind, IProgressMonitor monitor) throws Exception {
         IMaven maven = MavenPlugin.getMaven();
-        BuildContext buildContext = getBuildContext();
-
-        File source = getParameter(maven, "xsdDirectory", File.class);
-        Scanner ds = buildContext.newScanner(source);
-        ds.scan();
-        if (nonEmpty(ds.getIncludedFiles())) {
+        File xsd = getParameter(maven, "xsdDirectory", File.class);
+        File wsdl = getParameter(maven, "wsdlDirectory", File.class);
+        if (!hasChanged(xsd) && !hasChanged(wsdl)) {
             return null;
         }
 
         Set<IProject> result = super.build(kind, monitor);
-
         refreshOutputDirectory(maven);
         return result;
+    }
+
+    private boolean hasChanged(File directory) throws CoreException {
+        BuildContext buildContext = getBuildContext();
+        Scanner ds = buildContext.newScanner(directory);
+        ds.scan();
+        String[] files = ds.getIncludedFiles();
+        return files != null && files.length > 0;
     }
 
     private void refreshOutputDirectory(IMaven maven) throws CoreException {
@@ -46,10 +50,6 @@ public class ScalaxbBuildParticipant extends MojoExecutionBuildParticipant {
 
     <T> T getParameter(IMaven maven, String name, Class<T> type) throws CoreException {
         return maven.getMojoParameterValue(getSession(), getMojoExecution(), name, type);
-    }
-
-    private boolean nonEmpty(String[] values) {
-        return values != null && values.length > 0;
     }
 
 }
